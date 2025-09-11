@@ -1,0 +1,7 @@
+# Ground truth taxonomic IDs for ENDO category
+# Generated from: data/endo
+# Mapped accessions: 1
+# Date: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+NC_000913.3	511145

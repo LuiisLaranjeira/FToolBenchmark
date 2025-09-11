@@ -1,0 +1,51 @@
+TAXONOMY TOOL EVALUATION SUMMARY
+==================================================
+
+Total evaluations: 668
+Tools evaluated: CENTRIFUGE, Clark, Falcon2, KRAKEN
+Conditions tested: 7 depths, 6 read lengths, 4 deamination rates
+
+TOOL RANKINGS (by mean AUC-ROC)
+-----------------------------------
+1. Falcon2:
+   AUC-ROC: 0.998
+   F1:      0.984
+   Precision: 0.975
+   Recall:    0.994
+
+2. CENTRIFUGE:
+   AUC-ROC: 0.913
+   F1:      0.420
+   Precision: 0.634
+   Recall:    0.480
+
+3. KRAKEN:
+   AUC-ROC: 0.832
+   F1:      0.346
+   Precision: 0.515
+   Recall:    0.609
+
+4. Clark:
+   AUC-ROC: 0.800
+   F1:      0.059
+   Precision: 0.030
+   Recall:    1.000
+
+BEST CONDITIONS PER TOOL
+------------------------------
+CENTRIFUGE:
+   Best AUC-ROC: 0.999
+   At: depth=1, read=30, deam=0.0
+
+Clark:
+   Best AUC-ROC: 0.906
+   At: depth=1, read=30, deam=0.3
+
+Falcon2:
+   Best AUC-ROC: 1.000
+   At: depth=1, read=50, deam=0.0
+
+KRAKEN:
+   Best AUC-ROC: 1.000
+   At: depth=1, read=40, deam=0.0
+

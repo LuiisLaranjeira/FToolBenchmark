@@ -1,0 +1,9 @@
+# Unique taxonomic IDs for BACT category
+# Total unique taxIDs: 6
+
+10255
+10298
+10407
+10632
+10798
+32604

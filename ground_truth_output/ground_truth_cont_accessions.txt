@@ -1,0 +1,10 @@
+# Ground truth accessions for CONT category
+# Generated from: data/cont
+# Files processed: 2
+# Total accessions: 2
+# Unique accessions: 2
+# Date: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+NC_000913.3
+NC_012920.1

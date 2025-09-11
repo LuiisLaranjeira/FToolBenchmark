@@ -1,0 +1,429 @@
+1	root	no rank
+9606	Homo sapiens	species
+10239	Viruses	acellular root
+10255	Variola virus	no rank
+10298	Human alphaherpesvirus 1	no rank
+10404	Hepadnaviridae	family
+10405	Orthohepadnavirus	genus
+10406	Ground squirrel hepatitis virus	no rank
+10407	Hepatitis B virus	no rank
+10632	JC polyomavirus	no rank
+10658	Enterobacteria phage PRD1	no rank
+10798	Human parvovirus B19	no rank
+10837	Digitaria streak virus	no rank
+10868	Escherichia phage If1	no rank
+10882	Orthoreovirus	genus
+10986	Rice gall dwarf virus	no rank
+11039	Western equine encephalitis virus	no rank
+11049	Lelystad virus	no rank
+11086	Louping ill virus	no rank
+11795	Friend murine leukemia virus	no rank
+11901	Bovine leukemia virus	no rank
+12139	Southern bean mosaic virus	no rank
+12165	Chrysanthemum virus B	no rank
+12169	Potato virus S	no rank
+12235	Cucumber green mottle mosaic virus	no rank
+12433	Garlic virus A	no rank
+28355	Peanut clump virus	no rank
+31657	Pestivirus sp.	species
+32604	Human betaherpesvirus 6B	no rank
+33724	Nilaparvata lugens reovirus	no rank
+35269	Woodchuck hepatitis virus	no rank
+35279	Meaban virus	no rank
+35515	Melao virus	no rank
+37138	Galleria mellonella densovirus	no rank
+39046	Cassava common mosaic virus	no rank
+40057	Lebombo virus	no rank
+40061	Wallal virus	no rank
+40121	Erythroparvovirus	genus
+41459	Sweet potato mild mottle virus	no rank
+46771	Simian virus 12	species
+48543	Whataroa virus	no rank
+57482	European bat lyssavirus 1	no rank
+60875	Mucambo virus	no rank
+64303	Aroa virus	no rank
+64309	Jugra virus	no rank
+64320	Zika virus	no rank
+68416	Woolly monkey hepatitis B virus	no rank
+72197	Human erythrovirus V9	species
+83201	Vibrio phage fs2	no rank
+93224	Spiroplasma phage SVTS2	no rank
+96029	Yellow head virus	no rank
+140410	Peduovirus	genus
+147711	Rhinovirus A	no rank
+151341	Polyomaviridae	family
+159139	Manzanilla virus	no rank
+159140	Buttonwillow virus	no rank
+166122	Human endogenous retrovirus K113	no rank
+167634	Grapevine rootstock stem lesion associated virus	no rank
+168135	Potyvirus apii	species
+173082	Chum salmon reovirus CS	no rank
+173824	Methanothermobacter phage psiM100	species
+174178	Citrus yellow mosaic virus	no rank
+180822	Chronic bee paralysis virus	species
+217615	Grapevine leafroll-associated virus 7	no rank
+223769	Grapevine Anatolian ringspot virus	no rank
+229149	Johnsongrass chlorotic stripe mosaic virus	no rank
+248053	Farallon virus	no rank
+262957	Piper yellow mottle virus	no rank
+290008	Isfahan virus	no rank
+300188	Duck coronavirus	no rank
+318852	Oak-Vale virus	no rank
+325676	Nam Dinh virus	no rank
+329639	Canine minute virus	no rank
+333761	human papillomavirus 18	serotype
+348823	maize Iranian mosaic virus	no rank
+358764	Border disease virus	no rank
+362692	Oryza rufipogon endornavirus	no rank
+380432	Sandjimba virus	no rank
+390845	Aedes flavivirus	species
+393599	East African cassava mosaic Kenya virus	no rank
+399314	Strawberry chlorotic fleck-associated virus	no rank
+431317	Triticum mosaic virus	no rank
+453050	Sweet potato virus 2	no rank
+465447	American grass carp reovirus	no rank
+474454	Rose spring dwarf-associated virus	no rank
+488317	Eggplant mottled dwarf virus	no rank
+511145	Escherichia coli str. K-12 substr. MG1655	no rank
+556524	Armigeres subalbatus virus SaX06-AK20	species
+565995	Bundibugyo virus	no rank
+590647	Nariva virus	no rank
+607716	Alphachrysovirus aspergilli	species
+629740	Rio Grande virus	no rank
+644609	Nyavirus midwayense	species
+667516	Nakiwogo virus	species
+679536	Cotton leaf curl Gezira alphasatellite	no rank
+707546	Porcine parvovirus 4	no rank
+743578	uncultured phage MedDCM-OCT-S08-C41	no rank
+756285	Tetraselmis viridis virus S1	no rank
+759701	Bettongia penicillata papillomavirus 1	serotype
+759938	Barbel circovirus	no rank
+761702	Soybean chlorotic blotch virus	no rank
+764348	Magnaporthe oryzae chrysovirus 1	species
+797075	Nerine latent virus	no rank
+877240	Pseudoalteromonas phage H105/1	species
+915424	Macaca fascicularis papillomavirus 2	serotype
+931209	human papillomavirus 128	serotype
+947842	Cronobacter phage ESSI-2	no rank
+947843	Erwinia phage ENT90	no rank
+997078	Tomato leaf curl Comoros virus	no rank
+1010668	Murre virus	no rank
+1027468	Farmington virus	species
+1041929	Cavally virus	no rank
+1046251	Maraba virus	no rank
+1070324	Bos taurus papillomavirus 12	serotype
+1074213	Mouse kobuvirus M-5/USA/2010	species
+1131416	Cucurbit mild mosaic virus	no rank
+1148491	Rosellinia necatrix victorivirus 1	no rank
+1158189	Chaco virus	no rank
+1159902	Common moorhen coronavirus HKU21	no rank
+1161132	Rabbit astrovirus TN/2208/2010	species
+1163537	Tianjin totivirus	species
+1204161	Tyulek (Tjuloc) virus	no rank
+1206313	Enterobacteria phage C-1 INW-2012	no rank
+1213588	Rose yellow vein virus	no rank
+1220025	Pokeweed mosaic virus	no rank
+1221206	Soybean chlorotic spot virus	species
+1229790	Propionibacterium phage P100_A	no rank
+1235650	Propionibacterium phage PHL071N05	no rank
+1236400	Pan troglodytes troglodytes polyomavirus 1	species
+1238455	Dak Nong virus	no rank
+1241918	Le Blanc nodavirus	species
+1272961	Aruac virus	no rank
+1279100	Sclerotinia sclerotiorum mitovirus 4	no rank
+1286214	Yellow baboon polyomavirus 2	no rank
+1293536	Turkey avisivirus	no rank
+1309583	Bacillus phage MG-B1	no rank
+1330070	Melegrivirus A	no rank
+1381104	Leopards Hill virus	no rank
+1381464	Blackberry vein banding-associated virus	no rank
+1398507	Felis catus papillomavirus 4	serotype
+1400526	Donkey orchid symptomless virus	no rank
+1406816	Zucchini tigre mosaic virus	no rank
+1408133	Rhizoctonia cerealis alphaendornavirus 1	no rank
+1408144	Fikirini virus	no rank
+1411681	Rhizoctonia solani dsRNA virus 2	species
+1435008	Citrus endogenous pararetrovirus	species
+1453408	Issyk-Kul virus	no rank
+1457166	Cumuto virus	no rank
+1457386	Hunter Island virus	no rank
+1468172	Gaillardia latent virus	no rank
+1471047	Khurdun virus	no rank
+1474807	Mojiang virus	no rank
+1485922	Beauveria bassiana victorivirus NZL/1980	no rank
+1493858	Goose calicivirus	species
+1497434	Rodent paramyxovirus	no rank
+1498188	Propionibacterium phage Pacnes 2012-15	no rank
+1503293	BtRf-AlphaCoV/YN2012	species
+1508710	Roundleaf bat hepatitis B virus	no rank
+1508711	Horseshoe bat hepatitis B virus	no rank
+1511639	Dolphin rhabdovirus	no rank
+1513489	Bitter gourd yellow vein virus	species
+1518575	Human astrovirus BF34	no rank
+1527523	Macrophomina phaseolina tobamo-like virus	species
+1536605	Leuconostoc phage Ln-9	no rank
+1546178	Southwest baboon virus 1	species
+1557034	Yellowstone Lake virophage 6	species
+1562064	hunnivirus A4	no rank
+1569055	Elderberry carlavirus D	no rank
+1569057	Ribes americanum virus A	no rank
+1582094	Cosavirus JMY-2014	species
+1588048	Tadarida brasiliensis polyomavirus 1	species
+1608047	Huangpi Tick Virus 1	no rank
+1608064	Sanxia Water Strider Virus 5	species
+1608090	Taishun Tick Virus	no rank
+1608125	Wuhan Millipede Virus 2	no rank
+1608137	Wuhan Tick Virus 1	no rank
+1611877	Adana virus	no rank
+1622024	Desmodus rotundus endogenous retrovirus	species
+1636570	Lactococcus phage 936 group phage Phi5.12	no rank
+1636578	Lactococcus phage 936 group phage PhiF0139	no rank
+1647391	Streptococcus phage APCM01	species
+1649240	Escherichia phage pro483	no rank
+1654782	Propionibacterium phage QueenBey	species
+1655015	Propionibacterium phage Lauchelly	no rank
+1655017	Propionibacterium phage Ouroboros	no rank
+1661395	Ampivirus A1	no rank
+1670669	Lutzomyia reovirus 1	species
+1678161	Diatom colony associated dsRNA virus 3	species
+1692045	Tobacco virus 1	no rank
+1712570	Kasokero virus	no rank
+1732175	Acidianus rod-shaped virus 2	no rank
+1743411	Gorilla anellovirus	no rank
+1746057	Beihai barnacle viurs 1	species
+1746065	Tacheng tick virus 8	species
+1747271	Propionibacterium phage PA1-14	species
+1755588	Sicinivirus A	no rank
+1762023	Pan troglodytes verus polyomavirus 8	no rank
+1788434	Bat mastadenovirus WIV12	no rank
+1795648	Picornavirales Tottori-HG1	species
+1802949	Ceratitis capitata sigmavirus	no rank
+1802951	Drosophila unispina virus 1	no rank
+1803394	Bastrovirus 7	no rank
+1819305	Thimiri virus	no rank
+1827005	Tunisian small ruminant pestivirus	no rank
+1881013	Senna mosaic virus	no rank
+1891714	Betapolyomavirus	genus
+1891758	Betapolyomavirus secuchlopygerythrus	species
+1891767	Betapolyomavirus macacae	species
+1904411	Rousettus aegyptiacus polyomavirus 1	no rank
+1904439	Simian retrovirus 8	species
+1913082	Streptococcus phage CHPC926	no rank
+1917412	Picornaviridae sp. rodent/Ee/PicoV/NX2015	no rank
+1922362	Beihai barnacle virus 4	species
+1922381	Beihai hepe-like virus 10	species
+1922387	Beihai hepe-like virus 4	species
+1922499	Beihai paphia shell virus 4	species
+1922573	Beihai picorna-like virus 30	species
+1922601	Beihai picorna-like virus 56	species
+1922604	Beihai picorna-like virus 59	species
+1922634	Beihai picorna-like virus 87	species
+1922664	Beihai sesarmid crab virus 4	no rank
+1922678	Beihai sipunculid worm virus 6	no rank
+1922699	Beihai sobemo-like virus 27	species
+1922722	Beihai tombus-like virus 19	species
+1922724	Beihai tombus-like virus 3	species
+1922776	Changjiang narna-like virus 1	species
+1922797	Changjiang picorna-like virus 8	species
+1922868	Hubei dimarhabdovirus virus 3	species
+1922871	Hubei diptera virus 10	no rank
+1922879	Hubei diptera virus 18	species
+1922901	Hubei leech virus 3	species
+1922925	Hubei mosquito virus 1	species
+1922962	Hubei narna-like virus 9	species
+1922991	Hubei odonate virus 10	no rank
+1923000	Hubei odonate virus 5	species
+1923114	Hubei picorna-like virus 34	species
+1923121	Hubei picorna-like virus 40	species
+1923123	Hubei picorna-like virus 42	species
+1923129	Hubei picorna-like virus 48	species
+1923133	Hubei picorna-like virus 51	species
+1923134	Hubei picorna-like virus 52	species
+1923146	Hubei picorna-like virus 63	species
+1923155	Hubei picorna-like virus 71	species
+1923196	Hubei sobemo-like virus 11	species
+1923217	Hubei sobemo-like virus 30	species
+1923250	Hubei tetragnatha maxillosa virus 8	species
+1923253	Hubei tick virus 2	species
+1923268	Hubei tombus-like virus 21	species
+1923322	Hubei unio douglasiae virus 2	species
+1923449	Shahe picorna-like virus 6	species
+1923474	Shuangao sobemo-like virus 1	species
+1923485	Wenling crustacean virus 2	species
+1923566	Wenzhou hepe-like virus 1	species
+1923632	Wenzhou picorna-like virus 45	species
+1923658	Wenzhou sobemo-like virus 2	species
+1923673	Wenzhou tombus-like virus 3	species
+1923695	Wuhan coneheads virus 1	species
+1923706	Wuhan house centipede virus 2	species
+1923775	Xinzhou nematode virus 7	species
+1923777	Xinzhou toro-like virus	no rank
+1926644	Fusarium langsethiae hypovirus 1	no rank
+1926967	Bivalve RNA virus G1	species
+1929150	Enterovirus AN12	species
+1937817	Spinach cryptic virus 1	species
+1938657	Hubei qinvirus-like virus 1	no rank
+1940570	Parvoviridae sp.	species
+1949197	Sida chlorotic mottle virus	no rank
+1958778	Bat iflavirus	species
+1958907	Staphylococcus phage Andhra	no rank
+1963254	Fall chinook aquareovirus	species
+1965018	Human PoSCV5-like circular virus	species
+1972568	Vesiculovirus jurona	species
+1972700	Diamondback moth iflavirus	species
+1980428	Emaravirus tritici	species
+1980624	Citrus chlorotic spot virus	no rank
+1981916	Salmovirus WFRC1	species
+1986479	Bemisia-associated genomovirus NfO	no rank
+1993907	Longan witches broom-associated virus	species
+2004966	Rhinolophus associated gemykibivirus 2	no rank
+2005044	Cucurbit vein banding virus	no rank
+2010276	Culex phasma-like virus	no rank
+2010277	Culex rhabdo-like virus	no rank
+2011087	Stenotrophomonas phage PSH1	no rank
+2018500	Solenopsis invicta virus 4	no rank
+2018502	Myrmica scabrinodis virus 1	no rank
+2032989	Rosellinia necatrix hypovirus 1	no rank
+2040592	Ohlsdorf virus	no rank
+2049933	Pomona bat hepatitis B virus	no rank
+2052685	Citrus leprosis virus C2	no rank
+2054409	Luteovirus sociomali	species
+2056878	Cacao bacilliform Sri Lanka virus	no rank
+2057979	Birch leaf roll-associated virus	no rank
+2065047	Torque teno midi virus 6	no rank
+2079458	Osedax japonicus RNA virus 1	species
+2079598	megrivirus E1	no rank
+2086643	Entoleuca hypovirus 1	no rank
+2099852	Pseudoalteromonas phage Cr39582	no rank
+2108359	Staphylococcus phage CSA13	no rank
+2116180	Guangdong fish caecilians picornavirus	no rank
+2116188	Hainan oriental leaf-toed gecko picornavirus	no rank
+2116189	fipivirus E1	no rank
+2116197	fipivirus F1	no rank
+2116490	Guangdong red-banded snake chuvirus-like virus	no rank
+2116536	Chimay rhabdovirus	no rank
+2163996	Capuchin monkey hepatitis B virus	no rank
+2164100	Penicillium digitatum narna-like virus 1	species
+2169669	Alphatectivirus	genus
+2169987	Barley yellow dwarf virus-kerII	no rank
+2170064	Mahlapitsi orthoreovirus	no rank
+2170206	Yellow-breasted capuchin simian foamy virus	no rank
+2170211	Lasius neglectus virus 2	species
+2171377	Murine adeno-associated virus 1	no rank
+2171394	Mus musculus polyomavirus 3	no rank
+2204155	Chaetoceros tenuissimus DNA virus SS12-43V	no rank
+2250219	Chiqui virus	species
+2294149	Passiflora edulis symptomless virus	no rank
+2304647	Beiji nairovirus	no rank
+2305483	Lactococcus phage vB_Llc_bIBB94p4	no rank
+2315392	Trichoderma harzianum bipartite mycovirus 1	no rank
+2338396	Grapevine associated tymo-like virus	species
+2364281	Wheat stripe mosaic virus	species
+2364291	Cytorhabdovirus caricae	no rank
+2479372	Ying Kou virus	species
+2480172	Cragig virus 1	species
+2480179	Mizyes virus 1	species
+2490817	Sclerotium rolfsii hypovirus 7	no rank
+2492658	Alphacoronavirus Bat-CoV/P.kuhlii/Italy/3398-19/2015	no rank
+2499226	Macaca mulatta feces associated virus 4	no rank
+2501743	Enterococcus phage vB_EfaP_Zip	no rank
+2544873	Ness Ziona virus	no rank
+2546034	Fusarium redolens polymycovirus 1	no rank
+2546620	Enterococcus phage vB_EfaP_Ef7.4	no rank
+2555551	Pepper mild mosaic virus	no rank
+2557875	Tai Forest hepadnavirus	species
+2560318	avian paramyxovirus 8	no rank
+2563826	Zebrafish picornavirus 1	no rank
+2569586	Canada goose coronavirus	species
+2576944	Dar es Salaam virus TZ-189	no rank
+2582874	Tortoise genomovirus 13	no rank
+2582937	Capybara genomovirus 10	no rank
+2587545	Coniothyrium diplodiella negative-stranded RNA virus 1	no rank
+2590572	Persimmon waikavirus	no rank
+2593930	Anemone nepovirus A	no rank
+2593991	peste-des-petits-ruminants virus	no rank
+2599303	Aucuba ringspot virus	no rank
+2604334	Avian chapparvovirus	species
+2607629	Physalis rugose mosaic virus	no rank
+2652327	Jeremy Point nyavirus	no rank
+2661622	Bolahun virus	no rank
+2664236	Malus domestica virus A	no rank
+2681594	Escherichia phage P2	no rank
+2681624	Lactococcus phage c2	no rank
+2682569	Chrysothrix chrysovirus 1	no rank
+2686512	Plasmopara viticola lesion associated ourmia-like virus 42	no rank
+2686555	Plasmopara viticola lesion associated ourmia-like virus 81	no rank
+2695847	Escherichia phage ESSI2_ev239	no rank
+2695850	Escherichia phage ESSI2_ev015	no rank
+2716350	Escherichia phage 503458	no rank
+2716753	Taiyi bat virus	no rank
+2731360	Heunggongvirae	kingdom
+2732588	Rakietenvirinae	subfamily
+2734556	East Asian Passiflora distortion virus	no rank
+2735947	Botrytis cinerea ourmia-like virus 13	no rank
+2746309	Coleopteran phasma-related virus OKIAV235	no rank
+2748250	Termeil virus	no rank
+2764701	Aconite virus A	no rank
+2766976	hepatovirus H2	no rank
+2767007	Bogoria virus	no rank
+2776820	Erwinia phage PEar6	no rank
+2783683	Macrobrachium rosenbergii Golda virus	no rank
+2785990	ssRNA phage AVE018	no rank
+2786004	ssRNA phage ESE021	no rank
+2786026	ssRNA phage Esthiorhiza.2_10	no rank
+2786033	ssRNA phage Esthiorhiza.2_17	no rank
+2786056	ssRNA phage Esthiorhiza.2_38	no rank
+2786102	ssRNA phage Esthiorhiza.4_4	no rank
+2786112	ssRNA phage Gephyllon.1_13	no rank
+2786178	ssRNA phage Gephyllon.4_2	no rank
+2786284	ssRNA phage Gerhypos.3_11	no rank
+2786305	ssRNA phage Gerhypos.3_6	no rank
+2786389	ssRNA phage SRR5466337_3	no rank
+2786463	ssRNA phage SRR5467091_13	no rank
+2786494	ssRNA phage SRR6254353_2	no rank
+2786594	ssRNA phage SRR6960799_36	no rank
+2786604	ssRNA phage SRR6960799_8	no rank
+2786648	ssRNA phage SRR7976299_8	no rank
+2786664	ssRNA phage SRR7976301_3	no rank
+2786665	ssRNA phage SRR7976301_4	no rank
+2786698	ssRNA phage SRR7976325_11	no rank
+2786722	ssRNA phage SRR7976325_7	no rank
+2786835	ssRNA phage Zoerhiza.4_19	no rank
+2791164	Camellia ringspot associated virus 4	no rank
+2800899	Marmot associated feces virus 4	no rank
+2800927	Miglotas virus	no rank
+2810811	Solenopsis invicta virus 15	no rank
+2811341	Ruloma virus	no rank
+2816848	Bangali torovirus	no rank
+2822469	Poaceae Liege virus 1	no rank
+2834422	Equine circovirus 1	no rank
+2842609	Claudivirus	genus
+2842616	Copernicusvirus	genus
+2843470	Vedamuthuvirus	genus
+2847092	giant squirrel virus	no rank
+2847812	Keterah virus	no rank
+2847847	megalopteran chu-related virus 119	no rank
+2848040	psittacine adenovirus 7	no rank
+2848316	Trichechus manatus latirostris papillomavirus 3	no rank
+2870378	mischivirus A1	no rank
+2886229	Xiangshan Nyami-like virus	no rank
+2898540	Lactococcus phage bIL67	no rank
+2902768	megrivirus A2	no rank
+2903266	Cnidium virus 1	no rank
+2905564	Fushun ischnura senegalensis lispivirus 1	no rank
+2905673	parainfluenza virus 5	no rank
+2914459	Chifec virus UA13_1887	no rank
+2914484	Avonheates virus SG_28	no rank
+2914486	Avonheates virus SG_4_10	no rank
+2946167	Peduoviridae	family
+2948876	Quadragintavirus	genus
+3044707	Duonihilunusvirus	genus
+3052304	Mammarenavirus cupixiense	species
+3052317	Mammarenavirus machupoense	species
+3052324	Mammarenavirus piritalense	species
+3052330	Mammarenavirus wenzhouense	species
+3052538	Orthonairovirus tomdiense	species
+3052627	Phasivirus baduense	species
+3052633	Phasivirus wutaiense	species
+3070833	Dhati Welel virus	no rank
+3094845	unclassified Aliceevansviridae	no rank

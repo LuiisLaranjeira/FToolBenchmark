@@ -1,0 +1,5 @@
+# Unique taxonomic IDs for CONT category
+# Total unique taxIDs: 2
+
+511145
+9606

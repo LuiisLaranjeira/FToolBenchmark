@@ -1,0 +1,14 @@
+# Ground truth accessions for BACT category
+# Generated from: data/bact
+# Files processed: 6
+# Total accessions: 6
+# Unique accessions: 6
+# Date: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+NC_000883.2
+NC_000898.1
+NC_001611.1
+NC_001699.1
+NC_001806.2
+NC_003977.2

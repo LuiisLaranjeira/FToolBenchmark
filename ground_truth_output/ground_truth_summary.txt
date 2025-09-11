@@ -1,0 +1,33 @@
+GARGAMMEL GROUND TRUTH GENERATION SUMMARY
+==================================================
+
+Data directory: data/
+Output directory: ground_truth_output
+Date generated: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+BACT CATEGORY:
+  Files processed: 6
+  Total accessions: 6
+  Unique accessions: 6
+  Accessions file: ground_truth_bact_accessions.txt
+  TaxID file: ground_truth_bact_taxids.txt
+
+ENDO CATEGORY:
+  Files processed: 1
+  Total accessions: 1
+  Unique accessions: 1
+  Accessions file: ground_truth_endo_accessions.txt
+  TaxID file: ground_truth_endo_taxids.txt
+
+CONT CATEGORY:
+  Files processed: 2
+  Total accessions: 2
+  Unique accessions: 2
+  Accessions file: ground_truth_cont_accessions.txt
+  TaxID file: ground_truth_cont_taxids.txt
+
+TOTALS:
+  Files processed: 9
+  Total accessions: 9
+  Total unique accessions: 9

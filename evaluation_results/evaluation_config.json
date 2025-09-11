@@ -1,0 +1,19 @@
+{
+  "normalization_method": "robust",
+  "threshold_metric": "f1",
+  "cross_validation_folds": 3,
+  "handle_missing_strategy": "impute_zero",
+  "min_samples_per_condition": 5,
+  "min_positive_samples": 2,
+  "abundance_quantiles": [
+    0.5
+  ],
+  "abundance_labels": [
+    "low",
+    "high"
+  ],
+  "confidence_level": 0.95,
+  "multiple_testing_correction": "none",
+  "save_diagnostic_plots": true,
+  "detailed_logging": true
+}

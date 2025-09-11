@@ -1,0 +1,8 @@
+# Ground truth taxonomic IDs for CONT category
+# Generated from: data/cont
+# Mapped accessions: 2
+# Date: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+NC_000913.3	511145
+NC_012920.1	9606

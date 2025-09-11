@@ -1,0 +1,9 @@
+# Ground truth accessions for ENDO category
+# Generated from: data/endo
+# Files processed: 1
+# Total accessions: 1
+# Unique accessions: 1
+# Date: The current date is: 07/09/2025 
+Enter the new date: (dd-mm-yy)
+
+NC_000913.3
