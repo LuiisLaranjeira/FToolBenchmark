@@ -1,4 +1,0 @@
-# Unique taxonomic IDs for ENDO category
-# Total unique taxIDs: 1
-
-511145
