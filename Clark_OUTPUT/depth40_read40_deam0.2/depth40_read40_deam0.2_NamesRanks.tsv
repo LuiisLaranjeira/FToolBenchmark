@@ -2,7 +2,6 @@
 9606	Homo sapiens	species
 10679	Peduovirus P2	species
 72197	Human erythrovirus V9	species
-227940	Peduovirus L413C	species
 1236400	Pan troglodytes troglodytes polyomavirus 1	species
 1891763	Betapolyomavirus secuhominis	species
 1977411	Infulavirus If1	species
@@ -21,6 +20,6 @@
 3052189	Erythroparvovirus primate1	species
 3431302	Orthohepadnavirus hominoidei	species
 3431303	Orthohepadnavirus lagothricis	species
-3431304	Orthohepadnavirus longidigiti	species
+3431460	Orthohepadnavirus pomi	species
 3431462	Orthohepadnavirus sapaji	species
 3431487	Orthopoxvirus variola	species

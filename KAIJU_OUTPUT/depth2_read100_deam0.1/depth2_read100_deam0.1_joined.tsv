@@ -1,11 +1,9 @@
-12	25716	NA	NA
-4	25719	NA	NA
-3	28793	Notropis	genus
-1	38545	Gymnogongrus crenulatus	species
-52	40575	Clostridium grantii	species
-570	40576	Xenorhabdus bovienii	species
-6	40637	Epidinium	genus
-1	40645	Aleuritopteris duclouxii	species
-1	73975	Asteriscus vogelii	species
-1	74152	Elusimicrobiota	phylum
-1	76240	Tryonia	genus
+1	2	Bacteria	domain
+8	25716	NA	NA
+2	25719	NA	NA
+57	40575	Clostridium grantii	species
+623	40576	Xenorhabdus bovienii	species
+3	40637	Epidinium	genus
+3	40645	Aleuritopteris duclouxii	species
+1	76208	Luehdorfia japonica	species
+6	76240	Tryonia	genus

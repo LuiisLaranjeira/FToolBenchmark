@@ -1,7 +1,6 @@
 0	NA	NA
 10255	Variola virus	no rank
 10298	Human alphaherpesvirus 1	no rank
-10406	Ground squirrel hepatitis virus	no rank
 10407	Hepatitis B virus	no rank
 10632	JC polyomavirus	no rank
 10679	Peduovirus P2	species
@@ -25,17 +24,16 @@
 2057942	Pleurochrysis carterae circular virus	species
 2108359	Staphylococcus phage CSA13	no rank
 2163996	Capuchin monkey hepatitis B virus	no rank
-2557875	Tai Forest hepadnavirus	species
 2576222	Bat gemycircularvirus	no rank
 2607629	Physalis rugose mosaic virus	no rank
 2681594	Escherichia phage P2	no rank
 2695847	Escherichia phage ESSI2_ev239	no rank
-2695850	Escherichia phage ESSI2_ev015	no rank
 2732591	Andhravirus andhra	species
 2736202	Yersinia phage vB_YpM_50	no rank
 2785995	ssRNA phage ESE005	no rank
 2786389	ssRNA phage SRR5466337_3	no rank
 2786405	ssRNA phage SRR5466369_2	no rank
+2816848	Bangali torovirus	no rank
 2844218	Peduovirus P22H4	species
 2844222	Peduovirus P24E6b	species
 2844583	Gemykibivirus humas3	species
@@ -45,5 +43,4 @@
 511145	Escherichia coli str. K-12 substr. MG1655	no rank
 68416	Woolly monkey hepatitis B virus	no rank
 72197	Human erythrovirus V9	species
-947843	Erwinia phage ENT90	no rank
 9606	Homo sapiens	species

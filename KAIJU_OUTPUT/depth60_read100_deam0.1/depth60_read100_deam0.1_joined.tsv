@@ -1,14 +1,16 @@
-27	2	Bacteria	domain
+23	2	Bacteria	domain
 1	9020	Pternistis afer	species
 1	10732	Streptomyces phage R4	no rank
-161	25716	NA	NA
-85	25719	NA	NA
-53	28793	Notropis	genus
-5	38545	Gymnogongrus crenulatus	species
-1776	40575	Clostridium grantii	species
-17335	40576	Xenorhabdus bovienii	species
-114	40637	Epidinium	genus
-17	40645	Aleuritopteris duclouxii	species
-125	76240	Tryonia	genus
-12	76241	Tryonia brevissima	species
-4	131567	cellular organisms	cellular root
+160	25716	NA	NA
+89	25719	NA	NA
+41	28793	Notropis	genus
+9	38545	Gymnogongrus crenulatus	species
+1803	40575	Clostridium grantii	species
+17598	40576	Xenorhabdus bovienii	species
+121	40637	Epidinium	genus
+18	40645	Aleuritopteris duclouxii	species
+2	73975	Asteriscus vogelii	species
+4	76208	Luehdorfia japonica	species
+106	76240	Tryonia	genus
+13	76241	Tryonia brevissima	species
+5	131567	cellular organisms	cellular root

@@ -1,61 +1,77 @@
-14739	0	NA	NA
-81936	10255	Variola virus	no rank
-25046	10298	Human alphaherpesvirus 1	no rank
-888	10407	Hepatitis B virus	no rank
-1775	10632	JC polyomavirus	no rank
-5	10679	Peduovirus P2	species
-1914	10798	Human parvovirus B19	no rank
-59	10868	Escherichia phage If1	no rank
-5	1236395	Betapolyomavirus cercopitheci	species
-18	1236400	Pan troglodytes troglodytes polyomavirus 1	species
-9	1286214	Yellow baboon polyomavirus 2	no rank
-37	140410	Peduovirus	genus
-1	1552409	Sea otter polyomavirus 1	species
-15	1588764	Gemycircularvirus SL1	no rank
-1	1608141	Xincheng Mosquito Virus	no rank
-216	1634488	Mongoose feces-associated gemycircularvirus c	no rank
-99	1649240	Escherichia phage pro483	no rank
-176	1673681	Gemycircularvirus C1c	no rank
-1	1685756	Lake Sarah-associated circular virus-29	species
-17	1762023	Pan troglodytes verus polyomavirus 8	no rank
-10	1891714	Betapolyomavirus	genus
-13	1891758	Betapolyomavirus secuchlopygerythrus	species
-2	1891762	Betapolyomavirus hominis	species
-9	1912759	Equus caballus papillomavirus 8	serotype
-14	1941236	Gemykibivirus	genus
-1497251	1958907	Staphylococcus phage Andhra	no rank
-356	2004486	Bovine associated gemykibivirus 1	no rank
-23	2004966	Rhinolophus associated gemykibivirus 2	no rank
-348	2057942	Pleurochrysis carterae circular virus	species
-32847	2108359	Staphylococcus phage CSA13	no rank
-12	2163996	Capuchin monkey hepatitis B virus	no rank
-4	2557875	Tai Forest hepadnavirus	species
-184	2576222	Bat gemycircularvirus	no rank
-9	2582937	Capybara genomovirus 10	no rank
-2	2584398	Plant associated genomovirus 4	no rank
-5186	2607629	Physalis rugose mosaic virus	no rank
-78	2681594	Escherichia phage P2	no rank
-3	2695850	Escherichia phage ESSI2_ev015	no rank
-25	2732591	Andhravirus andhra	species
-6	2736202	Yersinia phage vB_YpM_50	no rank
-166	2785995	ssRNA phage ESE005	no rank
-198	2786389	ssRNA phage SRR5466337_3	no rank
-360	2786405	ssRNA phage SRR5466369_2	no rank
-4	2816848	Bangali torovirus	no rank
-12	2844218	Peduovirus P22H4	species
-9	2844222	Peduovirus P24E6b	species
-122	2844583	Gemykibivirus humas3	species
-22	2939039	Salmonella phage STYP1	no rank
-4	2992578	Yersinia phage L-413C	no rank
-14	3050297	Roseolovirus humanbeta6b	species
-54150	32604	Human betaherpesvirus 6B	no rank
-1	35269	Woodchuck hepatitis virus	no rank
-12	46771	Simian virus 12	species
-1143674	511145	Escherichia coli str. K-12 substr. MG1655	no rank
-32	562	Escherichia coli	species
-2	629740	Rio Grande virus	no rank
-8	68416	Woolly monkey hepatitis B virus	no rank
-67	72197	Human erythrovirus V9	species
-1	947842	Cronobacter phage ESSI-2	no rank
-4	947843	Erwinia phage ENT90	no rank
-37722	9606	Homo sapiens	species
+296847	0	NA	NA
+285487	10255	Variola virus	no rank
+223090	10298	Human alphaherpesvirus 1	no rank
+9	10406	Ground squirrel hepatitis virus	no rank
+4653	10407	Hepatitis B virus	no rank
+7537	10632	JC polyomavirus	no rank
+17	10679	Peduovirus P2	species
+8278	10798	Human parvovirus B19	no rank
+48	10868	Escherichia phage If1	no rank
+27	1236395	Betapolyomavirus cercopitheci	species
+83	1236400	Pan troglodytes troglodytes polyomavirus 1	species
+1	12639	Duck hepatitis B virus	no rank
+52	1286214	Yellow baboon polyomavirus 2	no rank
+7	1379695	Circoviridae 2 LDMD-2013	species
+1	1381464	Blackberry vein banding-associated virus	no rank
+52	140410	Peduovirus	genus
+1	1411681	Rhizoctonia solani dsRNA virus 2	species
+1	1508711	Horseshoe bat hepatitis B virus	no rank
+2	1552409	Sea otter polyomavirus 1	species
+48	1588764	Gemycircularvirus SL1	no rank
+935	1634488	Mongoose feces-associated gemycircularvirus c	no rank
+95	1649240	Escherichia phage pro483	no rank
+939	1673681	Gemycircularvirus C1c	no rank
+8	1685756	Lake Sarah-associated circular virus-29	species
+60	1762023	Pan troglodytes verus polyomavirus 8	no rank
+1	1788448	Circovirus-like genome DCCV-8	no rank
+41	1891714	Betapolyomavirus	genus
+50	1891758	Betapolyomavirus secuchlopygerythrus	species
+34	1891762	Betapolyomavirus hominis	species
+108	1912759	Equus caballus papillomavirus 8	serotype
+1	1923160	Hubei picorna-like virus 76	species
+4	1941236	Gemykibivirus	genus
+2	1985415	Human associated gemyvongvirus 1	no rank
+1400	2004486	Bovine associated gemykibivirus 1	no rank
+20	2004966	Rhinolophus associated gemykibivirus 2	no rank
+5	2049933	Pomona bat hepatitis B virus	no rank
+1	2050037	Long-fingered bat hepatitis B virus	no rank
+1546	2057942	Pleurochrysis carterae circular virus	species
+1	2058093	Red clover varicosavirus	species
+50	2163996	Capuchin monkey hepatitis B virus	no rank
+1	2303487	Abras virus	no rank
+8	2557875	Tai Forest hepadnavirus	species
+704	2576222	Bat gemycircularvirus	no rank
+5	2582937	Capybara genomovirus 10	no rank
+9	2584398	Plant associated genomovirus 4	no rank
+1	2592223	Salmonella phage SW9	no rank
+1	259931	Ross's goose hepatitis B virus	no rank
+83	2681594	Escherichia phage P2	no rank
+2	2681630	Escherichia phage 186	no rank
+1	2695847	Escherichia phage ESSI2_ev239	no rank
+1	2695850	Escherichia phage ESSI2_ev015	no rank
+3	2736202	Yersinia phage vB_YpM_50	no rank
+1	2748204	Benfica virus	no rank
+167	2786389	ssRNA phage SRR5466337_3	no rank
+358	2786405	ssRNA phage SRR5466369_2	no rank
+2	2793719	Agave tequilana virus 1	no rank
+3	2816848	Bangali torovirus	no rank
+16	2844218	Peduovirus P22H4	species
+13	2844222	Peduovirus P24E6b	species
+4	2844543	Gemyduguivirus macra1	species
+469	2844583	Gemykibivirus humas3	species
+2	2861008	Salmonella phage BIS20	no rank
+1	2907836	Salmonella phage PSP3	no rank
+15	2939039	Salmonella phage STYP1	no rank
+3	2992578	Yersinia phage L-413C	no rank
+244805	32604	Human betaherpesvirus 6B	no rank
+2	3432790	Tharbavirus aelin	species
+61	46771	Simian virus 12	species
+1201796	511145	Escherichia coli str. K-12 substr. MG1655	no rank
+51	562	Escherichia coli	species
+45	68416	Woolly monkey hepatitis B virus	no rank
+365	72197	Human erythrovirus V9	species
+2	76052	Watermelon bud necrosis virus	no rank
+1	89623	Snow goose hepatitis B virus	no rank
+7	947842	Cronobacter phage ESSI-2	no rank
+1	947843	Erwinia phage ENT90	no rank
+45229	9606	Homo sapiens	species

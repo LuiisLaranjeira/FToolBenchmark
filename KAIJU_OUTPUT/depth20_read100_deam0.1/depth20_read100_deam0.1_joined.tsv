@@ -1,15 +1,13 @@
-1	1	root	no rank
 7	2	Bacteria	domain
-1	9020	Pternistis afer	species
-40	25716	NA	NA
+62	25716	NA	NA
 32	25719	NA	NA
+1	27427	Myrmeleontidae	family
 13	28793	Notropis	genus
-1	38545	Gymnogongrus crenulatus	species
-609	40575	Clostridium grantii	species
-5742	40576	Xenorhabdus bovienii	species
-37	40637	Epidinium	genus
-5	40645	Aleuritopteris duclouxii	species
+6	38545	Gymnogongrus crenulatus	species
+623	40575	Clostridium grantii	species
+5831	40576	Xenorhabdus bovienii	species
+59	40637	Epidinium	genus
+9	40645	Aleuritopteris duclouxii	species
 1	76208	Luehdorfia japonica	species
-40	76240	Tryonia	genus
-4	76241	Tryonia brevissima	species
-3	131567	cellular organisms	cellular root
+46	76240	Tryonia	genus
+6	76241	Tryonia brevissima	species

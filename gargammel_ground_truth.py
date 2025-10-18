@@ -24,7 +24,7 @@ import re
 
 # Import functions from your existing taxonomy processing script
 try:
-    from main import (
+    from taxonomy_processing import (
         extract_accessions_from_fna,
         accession_to_taxid,
         generate_ground_truth_from_fna_folder
@@ -435,8 +435,8 @@ Example usage:
 
     parser.add_argument(
         "--output_dir",
-        default="ground_truth_output",
-        help="Output directory for ground truth files (default: ground_truth_output)"
+        default="ground_truth",
+        help="Output directory for ground truth files (default: ground_truth)"
     )
 
     parser.add_argument(

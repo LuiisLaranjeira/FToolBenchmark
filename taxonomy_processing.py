@@ -2,7 +2,7 @@ import csv
 import os
 import re
 import time
-from logging import exception
+import logging
 
 import pandas as pd
 import argparse
@@ -11,37 +11,36 @@ from time import sleep
 from glob import glob
 from Bio import Entrez
 
-def reads_per_taxon_centrifuge(input_file, output_file, empty_namesranks, empty_correct_incorrect):
+
+def reads_per_taxon_centrifuge(input_file, output_file):
     # Step 1: Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file not found: {input_file}")
 
     taxid_list = []
 
-    # Step 2: Read column 3 from input (skip header with 'taxID')
-    with open(input_file, 'r') as f:
-        for line in f:
-            fields = line.strip().split('\t')
-            if len(fields) < 3 or fields[2] == "taxID":
-                continue
-            taxid_list.append(fields[2])
+    try:
+        # Step 2: Read column 3 from input (skip header with 'taxID')
+        with open(input_file, 'r') as f:
+            for line in f:
+                fields = line.strip().split('\t')
+                if len(fields) < 3 or fields[2] == "taxID":
+                    continue
+                taxid_list.append(fields[2])
 
-    # Step 3: Count occurrences
-    taxid_counts = Counter(taxid_list)
+        # Step 3: Count occurrences
+        taxid_counts = Counter(taxid_list)
 
-    # Step 4: Write to output
-    with open(output_file, 'w') as out:
-        for taxid, count in sorted(taxid_counts.items()):
-            out.write(f"{count}\t{taxid}\n")
+        # Step 4: Write to output
+        with open(output_file, 'w') as out:
+            for taxid, count in sorted(taxid_counts.items()):
+                out.write(f"{count}\t{taxid}\n")
 
-    # Step 5: If output is empty, write default files
-    if os.path.getsize(output_file) == 0:
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
+    except Exception as e:
+        logging.error(f"Something failed while counting the reads per TaxID: {e}")
 
-def reads_per_taxon_kraken2(input_file, output_file, empty_namesranks, empty_correct_incorrect):
+
+def reads_per_taxon_kraken2(input_file, output_file):
     taxids = []
 
     try:
@@ -70,88 +69,11 @@ def reads_per_taxon_kraken2(input_file, output_file, empty_namesranks, empty_cor
         if os.path.getsize(output_file) == 0:
             raise ValueError("Empty classification output")
 
-    except Exception:
-        # Write empty placeholder files on failure or no classified reads
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
+    except Exception as e:
+        logging.error(f"Something failed while counting the reads per TaxID: {e}")
 
-def reads_per_taxon_diamond(input_file, output_file, empty_namesranks, empty_correct_incorrect):
-    taxid_list = []
 
-    try:
-        # Step 1: Read file and extract column 2 (taxID), excluding '0'
-        with open(input_file, 'r') as f:
-            for line in f:
-                fields = line.strip().split('\t')
-                if len(fields) >= 2 and fields[1] != '0':
-                    taxid_list.append(fields[1])
-
-        # Step 2: Count occurrences
-        taxid_counts = Counter(taxid_list)
-
-        # Step 3: Write results to output
-        with open(output_file, 'w') as out:
-            for taxid in sorted(taxid_counts, key=int):
-                out.write(f"{taxid_counts[taxid]}\t{taxid}\n")
-
-        # Step 4: Check if output is empty
-        if os.path.getsize(output_file) == 0:
-            raise ValueError("Empty result file")
-
-    except Exception:
-        # Step 5: Write fallback empty files
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
-
-def reads_per_taxon_metaphlan2(input_file, output_counts, output_names, empty_namesranks, empty_correct_incorrect):
-    lineages = []
-
-    try:
-        # Read and clean input
-        with open(input_file, 'r') as f:
-            for line in f:
-                if line.startswith('#') or line.strip() == '':
-                    continue
-                fields = line.strip().split('\t')
-                if len(fields) < 2:
-                    continue
-                lineage = re.sub(r'\|t__.+$', '', fields[1])  # Remove terminal strain-level info
-                lineages.append(lineage)
-
-        # Count occurrences of each lineage
-        lineage_counts = Counter(lineages)
-
-        # Write counts file (only counts)
-        with open(output_counts, 'w') as f_counts:
-            for lineage in sorted(lineage_counts):
-                f_counts.write(f"{lineage_counts[lineage]}\n")
-
-        # Write last taxonomic rank name (e.g., species)
-        with open(output_names, 'w') as f_names:
-            for lineage in sorted(lineage_counts):
-                match = re.search(r'\|(\w__)?.+?$', lineage)
-                if match:
-                    last_rank = match.group(0).lstrip('|')
-                    last_rank = re.sub(r'^\w__', '', last_rank)
-                    f_names.write(last_rank.replace('_', ' ') + '\n')
-
-        # Check if output file is empty
-        if os.path.getsize(output_counts) == 0:
-            raise ValueError("Output is empty")
-
-    except Exception:
-        # Create fallback files
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
-        open(output_names, 'a').close()  # Touch the names file
-
-def reads_per_taxon_clark(input_file, output_file, empty_namesranks, empty_correct_incorrect):
+def reads_per_taxon_clark(input_file, output_file):
     # Step 1: Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file not found: {input_file}")
@@ -184,88 +106,89 @@ def reads_per_taxon_clark(input_file, output_file, empty_namesranks, empty_corre
                 out.write(f"{count}\t{taxid}\n")
 
     # Exception handling for empty output
-    except Exception:
-        # Step 5: Write default fallback files if no data
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
+    except Exception as e:
+        logging.error(f"Something failed while counting the reads per TaxID: {e}")
 
-def reads_per_taxon_kaiju(input_file, output_file, empty_namesranks, empty_correct_incorrect):
+
+def reads_per_taxon_kaiju(input_file, output_file):
     # Step 1: Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file not found: {input_file}")
 
     taxid_list = []
 
-    # Step 2: Read file and extract taxIDs from classified reads
-    with open(input_file, 'r') as f:
-        for line in f:
-            fields = line.strip().split('\t')
-            if len(fields) < 3:
-                continue
-            if fields[0] != 'C':
-                continue  # Only include classified reads
-            taxid = fields[2]
-            if taxid == '0':
-                continue  # Skip unclassified
-            taxid_list.append(taxid)
+    try:
+        # Step 2: Read file and extract taxIDs from classified reads
+        with open(input_file, 'r') as f:
+            for line in f:
+                fields = line.strip().split('\t')
+                if len(fields) < 3:
+                    continue
+                if fields[0] != 'C':
+                    continue  # Only include classified reads
+                taxid = fields[2]
+                if taxid == '0':
+                    continue  # Skip unclassified
+                taxid_list.append(taxid)
 
-    # Step 3: Count occurrences
-    taxid_counts = Counter(taxid_list)
+        # Step 3: Count occurrences
+        taxid_counts = Counter(taxid_list)
 
-    # Step 4: Write output
-    with open(output_file, 'w') as out:
-        for taxid, count in sorted(taxid_counts.items(), key=lambda x: int(x[0])):
-            out.write(f"{count}\t{taxid}\n")
+        # Step 4: Write output
+        with open(output_file, 'w') as out:
+            for taxid, count in sorted(taxid_counts.items(), key=lambda x: int(x[0])):
+                out.write(f"{count}\t{taxid}\n")
 
-    # Step 5: If output is empty, write fallback files
-    if os.path.getsize(output_file) == 0:
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
+        # Step 5: If output is empty
+        if os.path.getsize(output_file) == 0:
+            logging.warning(f"No occurrences found, the output is empty.")
 
-def reads_per_taxon_falcon(input_file, output_file, empty_namesranks, empty_correct_incorrect):
+    except Exception as e:
+        logging.error(f"Something failed while counting the reads per TaxID: {e}")
+
+
+def reads_per_taxon_falcon(input_file, output_file):
     # Step 1: Check if input file exists
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file not found: {input_file}")
 
     taxon_counts = Counter()
 
-    # Step 2: Read file and extract similarity and accession
-    with open(input_file, newline='') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
-            similarity_str = row.get("Similarity")
-            sequence = row.get("Sequence")
+    try:
+        # Step 2: Read file and extract similarity and accession
+        with open(input_file, newline='') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for row in reader:
+                similarity_str = row.get("Similarity")
+                sequence = row.get("Sequence")
 
-            if not similarity_str or not sequence:
-                continue
+                if not similarity_str or not sequence:
+                    continue
 
-            # Extract accession using regex
-            match = re.search(r"[A-Z]{1,2}_\d+\.\d+", sequence)
-            if not match:
-                continue
-            accession = match.group(0)
+                # Extract accession using regex
+                match = re.search(r"[A-Z]{1,2}_\d+\.\d+", sequence)
+                if not match:
+                    continue
+                accession = match.group(0)
 
-            try:
-                similarity = float(similarity_str)
-                taxon_counts[accession] += similarity
-            except ValueError:
-                continue
+                try:
+                    similarity = float(similarity_str)
+                    taxon_counts[accession] += similarity
+                except ValueError:
+                    continue
 
-    # Step 3: Write output
-    with open(output_file, 'w') as out:
-        for taxid, similarity in sorted(taxon_counts.items(), key=lambda x: x[0]):
-            out.write(f"{similarity:.3f}\t{taxid}\n")
+        # Step 3: Write output
+        with open(output_file, 'w') as out:
+            for taxid, similarity in sorted(taxon_counts.items(), key=lambda x: x[0]):
+                out.write(f"{similarity:.3f}\t{taxid}\n")
 
-    # Step 4: Fallback if output is empty
-    if os.path.getsize(output_file) == 0:
-        with open(empty_namesranks, 'w') as f1:
-            f1.write("0\t0\t0\t0\t0\n")
-        with open(empty_correct_incorrect, 'w') as f2:
-            f2.write("0\t0\t0\t0\t0\tUnclassified\t0\n")
+        # Step 4: Fallback if output is empty
+        if os.path.getsize(output_file) == 0:
+            logging.warning(f"No occurrences found, the output is empty.")
+
+    except Exception as e:
+        logging.error(f"Something failed while counting the reads per TaxID: {e}")
+
 
 def get_name_rank(input_file, name_rank_file, joined_output_file, email, api_key=None):
     # Step 1: Set Entrez credentials
@@ -320,11 +243,12 @@ def get_name_rank(input_file, name_rank_file, joined_output_file, email, api_key
                 name, rank = tax_info.get(tid, ("NA", "NA"))
                 out.write(f"{fields[0]}\t{tid}\t{name}\t{rank}\n")
 
+
 def reformat_extra_taxids(input_file, output_reads_taxon, output_more_taxids):
     # Step 1: Open files
     with open(input_file, 'r') as infile, \
-         open(output_reads_taxon, 'w') as out_clean, \
-         open(output_more_taxids, 'w') as out_extra:
+            open(output_reads_taxon, 'w') as out_clean, \
+            open(output_more_taxids, 'w') as out_extra:
 
         for line in infile:
             fields = line.rstrip('\n').split('\t')
@@ -347,6 +271,7 @@ def reformat_extra_taxids(input_file, output_reads_taxon, output_more_taxids):
     if os.path.getsize(output_more_taxids) == 0:
         # Leave it empty but ensure file exists
         open(output_more_taxids, 'a').close()
+
 
 def map_falcon_accessions_to_taxids(input_file, output_file, email, api_key=None, verbose=False):
     """
@@ -389,8 +314,8 @@ def map_falcon_accessions_to_taxids(input_file, output_file, email, api_key=None
             taxid = taxid_map.get(acc, "0")
             out.write(f"{similarity:.3f}\t{taxid}\n")
 
-
     print(f"[✓] Written: {output_file}")
+
 
 def accession_to_taxid(accessions, email, api_key=None, sleep_time=0.34, verbose=False):
     """
@@ -460,6 +385,7 @@ def accession_to_taxid(accessions, email, api_key=None, sleep_time=0.34, verbose
 
     return taxid_map
 
+
 def merge_readsp_taxon_tables(classifier_output_dir, output_file):
     """
     Merge per-sample <sample>_ReadspTaxon.txt files from a classifier output directory
@@ -504,25 +430,61 @@ def merge_readsp_taxon_tables(classifier_output_dir, output_file):
     # Write to file
     merged_df.to_csv(output_file, sep="\t", index=False)
 
-def extract_accessions_from_fna(folder_path):
+
+# def extract_accessions_from_fna(folder_path):
+#     """
+#     Extract accession numbers from the first line of each .fna file.
+#
+#     Returns:
+#         list[str]: Accession numbers.
+#     """
+#     accessions = []
+#     for filename in os.listdir(folder_path):
+#         if filename.endswith(".fna"):
+#             with open(os.path.join(folder_path, filename), 'r') as f:
+#                 for line in f:
+#                     if line.startswith(">"):
+#                         acc = line.split()[0][1:]  # removes '>' and takes accession
+#                         accessions.append(acc)
+#                         break
+#     return accessions
+
+def extract_accessions_from_fna(folder_path, extensions=('.fna', '.fa', '.fasta')):
     """
-    Extract accession numbers from the first line of each .fna file.
+    Recursively scan folder_path for FASTA files and extract the accession
+    from the first header line of each file.
 
     Returns:
         list[str]: Accession numbers.
     """
     accessions = []
-    for filename in os.listdir(folder_path):
-        if filename.endswith(".fna"):
-            with open(os.path.join(folder_path, filename), 'r') as f:
-                for line in f:
-                    if line.startswith(">"):
-                        acc = line.split()[0][1:]  # removes '>' and takes accession
-                        accessions.append(acc)
-                        break
+    extensions = tuple(e.lower() for e in extensions)
+
+    for root, _, files in os.walk(folder_path):
+        for filename in files:
+            # check extension (case-insensitive)
+            if os.path.splitext(filename)[1].lower() not in extensions:
+                continue
+
+            filepath = os.path.join(root, filename)
+            try:
+                with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                    for line in f:
+                        if line.startswith('>'):
+                            # take token immediately after '>'
+                            acc = line.split()[0][1:]
+                            accessions.append(acc)
+                            # break  # only the first header per file
+            except OSError:
+                # unreadable file; skip
+                continue
+
     return accessions
 
-def generate_ground_truth_from_fna_folder(folder_path, email, api_key=None, output_file="ground_truth.txt", verbose=False):
+
+
+def generate_ground_truth_from_fna_folder(folder_path, email, api_key=None, output_file="ground_truth.txt",
+                                          verbose=False):
     """
     Extract accessions from .fna files in folder, map them to taxIDs using Entrez, and write taxIDs to output file.
 
@@ -543,6 +505,7 @@ def generate_ground_truth_from_fna_folder(folder_path, email, api_key=None, outp
     if verbose:
         print(f"[✅] Ground truth saved to {output_file}")
 
+
 def read_csv(file_path):
     """
     Reads a CSV file and returns its content as a list of dictionaries.
@@ -556,6 +519,7 @@ def read_csv(file_path):
             data.append(row)
     return data
 
+
 def detect_tool(input_path):
     """
     Detects classification tool name based on filename or path using keyword matching.
@@ -567,11 +531,7 @@ def detect_tool(input_path):
         "kraken": r"kraken",
         "centrifuge": r"centrifuge",
         "kaiju": r"kaiju",
-        "diamond": r"diamond",
-        "metaphlan": r"metaphlan",
         "falcon": r"falcon",
-        "blast": r"blast",
-        "megablast": r"megablast",
         "clark": r"clark",
     }
 
@@ -581,6 +541,7 @@ def detect_tool(input_path):
             return tool
 
     return "unknown"
+
 
 def process_sample(input_path, sample, output_dir, email, api_key):
     sample_dir = os.path.join(output_dir, sample)
@@ -592,8 +553,6 @@ def process_sample(input_path, sample, output_dir, email, api_key):
     counts_with_taxid = os.path.join(sample_dir, f"{sample}_ReadspTaxon.txt")
     names_ranks = os.path.join(sample_dir, f"{sample}_NamesRanks.tsv")
     joined_table = os.path.join(sample_dir, f"{sample}_joined.tsv")
-    empty_namesranks = os.path.join(sample_dir, f"{sample}_ReadsTaxon_NamesRanks.tsv")
-    empty_correct_incorrect = os.path.join(sample_dir, f"{sample}_Correct_Incorrect.tsv")
 
     # Step 1
     # Detect type of tool
@@ -601,59 +560,32 @@ def process_sample(input_path, sample, output_dir, email, api_key):
         print(f"[🦠] Processing {sample} with Centrifuge")
         reads_per_taxon_centrifuge(
             input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
+            output_file=raw_counts
         )
     elif detect_tool(input_path=input_path) == "kraken":
         print(f"[🦠] Processing {sample} with Kraken2")
         reads_per_taxon_kraken2(
             input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
-        )
-    elif detect_tool(input_path=input_path) == "diamond":
-        print(f"[🦠] Processing {sample} with DIAMOND")
-        reads_per_taxon_diamond(
-            input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
-        )
-    elif detect_tool(input_path=input_path) == "metaphlan":
-        print(f"[🦠] Processing {sample} with MetaPhlAn2")
-        reads_per_taxon_metaphlan2(
-            input_file=input_path,
-            output_counts=raw_counts,
-            output_names=os.path.join(sample_dir, f"{sample}_ReadspTaxon_Names.txt"),
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
+            output_file=raw_counts
         )
     elif detect_tool(input_path=input_path) == "clark":
         print(f"[🦠] Processing {sample} with CLARK")
         reads_per_taxon_clark(
             input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
+            output_file=raw_counts
         )
     elif detect_tool(input_path=input_path) == "kaiju":
         print(f"[🦠] Processing {sample} with Kaiju")
         reads_per_taxon_kaiju(
             input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
+            output_file=raw_counts
         )
     elif detect_tool(input_path=input_path) == "falcon":
         print(f"[🧬] Processing {sample} with FALCON")
         is_falcon = True
         reads_per_taxon_falcon(
             input_file=input_path,
-            output_file=raw_counts,
-            empty_namesranks=empty_namesranks,
-            empty_correct_incorrect=empty_correct_incorrect
+            output_file=raw_counts
         )
     else:
         print(f"[❓] Unknown tool detected for {sample}. Please check the input file.")
@@ -683,14 +615,41 @@ def process_sample(input_path, sample, output_dir, email, api_key):
         email=email
     )
 
+
 def main():
     parser = argparse.ArgumentParser(description="Taxonomy processing pipeline")
-    parser.add_argument("--input", required=True, help="Report file or folder of files")
+    parser.add_argument("--input", help="Report file or folder of files")
     parser.add_argument("--output_dir", default="output", help="Where to write outputs")
     parser.add_argument("--email", required=True, help="NCBI Entrez email")
     parser.add_argument("--api_key", default=None, help="NCBI API key")
 
+    parser.add_argument("--fna_folder", default=None,
+                        help="Folder to recursively scan for .fna/.fa/.fasta files to build ground truth")
+    parser.add_argument("--gt_output", default="ground_truth.txt",
+                        help="Path to write the generated ground-truth taxIDs")
+    parser.add_argument("--gt_only", action="store_true",
+                        help="Only generate ground truth from --fna_folder and exit")
+
     args = parser.parse_args()
+
+    if args.fna_folder:
+        print(f"\n[🔎] Building ground truth from FASTA under: {args.fna_folder}")
+        generate_ground_truth_from_fna_folder(
+            folder_path=args.fna_folder,
+            email=args.email,
+            api_key=args.api_key,
+            output_file=args.gt_output,
+            verbose=True
+        )
+        print(f"[✅] Ground truth written to {args.gt_output}")
+
+        if args.gt_only:
+            # Exit early if user requested GT-only mode
+            return
+
+        # ---- Normal classification processing path ----
+    if not args.input:
+        raise SystemExit("Error: --input is required unless you use --gt_only with --fna_folder.")
 
     os.makedirs(args.output_dir, exist_ok=True)
 
@@ -724,6 +683,7 @@ def main():
     )
     print("[✅] Done.")
 
+
 if __name__ == "__main__":
     main()
 
@@ -741,7 +701,7 @@ if __name__ == "__main__":
     # )
 
     # reads_per_taxon_falcon(
-    #     input_file="D:\Data\\reports_output\FALCON2\sim_depth1_read40_deam0_s.fq_report.txt",
+    #     input_file="D:\Data\\tool_reports\FALCON2\sim_depth1_read40_deam0_s.fq_report.txt",
     #     output_file="sample123_ReadspTaxon.txt",
     #     empty_namesranks="sample123_ReadsTaxon_NamesRanks.tsv",
     #     empty_correct_incorrect="sample123_Correct_Incorrect.tsv"
@@ -761,4 +721,3 @@ if __name__ == "__main__":
     # )
     #
     # merge_readsp_taxon_tables("Centrifuge_output", "Centrifuge_output/count_table.tsv")
-

@@ -1,12 +1,10 @@
-5	2	Bacteria	domain
-1	9020	Pternistis afer	species
-31	25716	NA	NA
-10	25719	NA	NA
-8	28793	Notropis	genus
-2	38545	Gymnogongrus crenulatus	species
-321	40575	Clostridium grantii	species
-2889	40576	Xenorhabdus bovienii	species
-18	40637	Epidinium	genus
-8	40645	Aleuritopteris duclouxii	species
-29	76240	Tryonia	genus
-4	76241	Tryonia brevissima	species
+4	2	Bacteria	domain
+22	25716	NA	NA
+9	25719	NA	NA
+12	28793	Notropis	genus
+1	38545	Gymnogongrus crenulatus	species
+305	40575	Clostridium grantii	species
+2823	40576	Xenorhabdus bovienii	species
+28	40637	Epidinium	genus
+5	40645	Aleuritopteris duclouxii	species
+21	76240	Tryonia	genus

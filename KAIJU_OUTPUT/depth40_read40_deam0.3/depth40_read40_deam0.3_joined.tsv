@@ -1,9 +1,9 @@
-22	25719	NA	NA
-1	27631	Tomopeas	genus
-9	38545	Gymnogongrus crenulatus	species
-97	40575	Clostridium grantii	species
-141	40576	Xenorhabdus bovienii	species
-17	40637	Epidinium	genus
-2	43668	Brachybacterium	genus
-54	76240	Tryonia	genus
-4	76241	Tryonia brevissima	species
+1	1	root	no rank
+11	25719	NA	NA
+3	38545	Gymnogongrus crenulatus	species
+19	40575	Clostridium grantii	species
+11	40576	Xenorhabdus bovienii	species
+1	40637	Epidinium	genus
+1	43668	Brachybacterium	genus
+1	76240	Tryonia	genus
+3	131567	cellular organisms	cellular root

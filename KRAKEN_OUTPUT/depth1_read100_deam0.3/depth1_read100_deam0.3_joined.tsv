@@ -1,26 +1,30 @@
-5063	1	root	no rank
-46	9606	Homo sapiens	species
-15220	10239	Viruses	acellular root
-1446	10255	Variola virus	no rank
-319	10298	Human alphaherpesvirus 1	no rank
-3	10405	Orthohepadnavirus	genus
-23	10407	Hepatitis B virus	no rank
-24	10632	JC polyomavirus	no rank
-24	10798	Human parvovirus B19	no rank
-1	11591	Uukuniemi virus	no rank
-1	12142	Artichoke mottled crinkle virus	no rank
-888	32604	Human betaherpesvirus 6B	no rank
-2	40121	Erythroparvovirus	genus
-1	72197	Human erythrovirus V9	species
-1582	511145	Escherichia coli str. K-12 substr. MG1655	no rank
-1	1400526	Donkey orchid symptomless virus	no rank
-1	1922681	Beihai sobemo-like virus 10	species
-1	1926969	Bivalve RNA virus G3	species
-1295	1958907	Staphylococcus phage Andhra	no rank
-45	2108359	Staphylococcus phage CSA13	no rank
-2	2116197	fipivirus F1	no rank
-1	2163996	Capuchin monkey hepatitis B virus	no rank
-18	2607629	Physalis rugose mosaic virus	no rank
-9	2731360	Heunggongvirae	kingdom
+4419	1	root	no rank
+54	9606	Homo sapiens	species
+13610	10239	Viruses	acellular root
+4203	10255	Variola virus	no rank
+2886	10298	Human alphaherpesvirus 1	no rank
+2	10405	Orthohepadnavirus	genus
+66	10407	Hepatitis B virus	no rank
+1	10537	Canine mastadenovirus A	no rank
+100	10632	JC polyomavirus	no rank
+139	10798	Human parvovirus B19	no rank
+3631	32604	Human betaherpesvirus 6B	no rank
+6	40121	Erythroparvovirus	genus
+1	83201	Vibrio phage fs2	no rank
+1	151341	Polyomaviridae	family
+1	221703	Simian foamy virus Pongo pygmaeus pygmaeus	no rank
+1321	511145	Escherichia coli str. K-12 substr. MG1655	no rank
+1	1508711	Horseshoe bat hepatitis B virus	no rank
+1	1608047	Huangpi Tick Virus 1	no rank
+1	1891714	Betapolyomavirus	genus
+1	1923219	Hubei sobemo-like virus 32	species
+1070	1958907	Staphylococcus phage Andhra	no rank
+1	2004966	Rhinolophus associated gemykibivirus 2	no rank
+1	2016447	ailurivirus A1	no rank
+43	2108359	Staphylococcus phage CSA13	no rank
+1	2301732	Bat Middle East Hepe-Astrovirus	species
+1	2501743	Enterococcus phage vB_EfaP_Zip	no rank
+1	2586201	Blackfly genomovirus 2	no rank
+10	2607629	Physalis rugose mosaic virus	no rank
+30	2731360	Heunggongvirae	kingdom
 2	2732588	Rakietenvirinae	subfamily
-1	2748254	Okola virus	no rank

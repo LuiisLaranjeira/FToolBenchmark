@@ -1,12 +1,11 @@
-4163	562	Escherichia coli	species
-94	9606	Homo sapiens	species
-1	1891763	Betapolyomavirus secuhominis	species
-2	2057942	Pleurochrysis carterae circular virus	species
-1	2560459	Peduovirus pro483	species
-1	2844258	Peduovirus magyaro	species
+3567	562	Escherichia coli	species
+104	9606	Homo sapiens	species
+1	1236400	Pan troglodytes troglodytes polyomavirus 1	species
+17	1891763	Betapolyomavirus secuhominis	species
 2	2844652	Gihfavirus pelohabitans	species
-72	3050292	Simplexvirus humanalpha1	species
-193	3050297	Roseolovirus humanbeta6b	species
-3	3052189	Erythroparvovirus primate1	species
-4	3431302	Orthohepadnavirus hominoidei	species
-254	3431487	Orthopoxvirus variola	species
+832	3050292	Simplexvirus humanalpha1	species
+838	3050297	Roseolovirus humanbeta6b	species
+30	3052189	Erythroparvovirus primate1	species
+15	3431302	Orthohepadnavirus hominoidei	species
+1	3431303	Orthohepadnavirus lagothricis	species
+814	3431487	Orthopoxvirus variola	species

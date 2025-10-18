@@ -1,9 +1,8 @@
-26	25719	NA	NA
-6	38545	Gymnogongrus crenulatus	species
-540	40575	Clostridium grantii	species
-564	40576	Xenorhabdus bovienii	species
-92	40637	Epidinium	genus
-7	40645	Aleuritopteris duclouxii	species
-1	43668	Brachybacterium	genus
-1	76208	Luehdorfia japonica	species
-59	76240	Tryonia	genus
+5	25719	NA	NA
+1	38545	Gymnogongrus crenulatus	species
+23	40575	Clostridium grantii	species
+4	40576	Xenorhabdus bovienii	species
+1	40637	Epidinium	genus
+1	76240	Tryonia	genus
+2	76241	Tryonia brevissima	species
+3	131567	cellular organisms	cellular root
