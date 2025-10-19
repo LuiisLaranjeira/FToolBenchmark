@@ -9,7 +9,7 @@ FToolBenchmark evaluates taxonomy classification tools (Centrifuge, Kraken2, CLA
 - **Read length** (bp)
 - **Deamination rate** (DNA degradation, relevant for ancient DNA)
 
-The framework computes performance metrics including AUC-PRC, AUC-ROC, F1 score, precision, and recall.
+The framework computes performance metrics including AUPRC, AUC-ROC, F1 score, precision, and recall.
 
 ## Requirements
 
@@ -126,7 +126,7 @@ Example: `depth20_read40_deam0.0`
 
 ## Evaluation Metrics
 
-- **AUC-PRC** (Primary): Area under Precision-Recall curve
+- **AUPRC** (Primary): Area under Precision-Recall curve
 - **AUC-ROC**: Area under ROC curve
 - **F1 Score**: Harmonic mean of precision and recall
 - **Precision**: True positives / (True positives + False positives)

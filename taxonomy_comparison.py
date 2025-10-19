@@ -5,7 +5,7 @@ Taxonomy tool comparison.
 Summary
 -------
 Evaluate each tool under each condition using a shared taxon universe that guarantees false negatives are counted.
-Prioritize PR–AUC; also report ROC–AUC (interpret ROC–AUC cautiously when negatives are scarce).
+Prioritize AUPRC; also report ROC–AUC (interpret ROC–AUC cautiously when negatives are scarce).
 
 Outputs (--outdir)
 ------------------
@@ -13,7 +13,7 @@ Outputs (--outdir)
 - tool_micro_metrics.csv      # micro-pooled across conditions (SECONDARY)
 - group_core_metrics.csv      # per (tool, depth, read, deam_key, condition)
 - curves/roc_<tool>.png, curves/pr_<tool>.png
-- factor_plots_auc_pr.png, factor_plots_auc_roc.png, factor_plots_f1.png
+- factor_plots_au_prc.png, factor_plots_auc_roc.png, factor_plots_f1.png
 
 CLI
 ---
@@ -66,7 +66,7 @@ def _marker_for(tool: str) -> str:
 
 
 def _bounded_ylim(metric: str):
-    return (0.0, 1.05) if metric in {"auc_prc", "auc_roc", "f1", "precision", "recall"} else None
+    return (0.0, 1.05) if metric in {"au_prc", "auc_roc", "f1", "precision", "recall"} else None
 
 
 # ----------------------- Small utils -----------------------
@@ -296,10 +296,10 @@ def compute_metrics(
         y_scores: np.ndarray,
         fixed_threshold: Optional[float],
 ) -> Dict[str, float]:
-    """Return auc_prc, auc_roc, threshold_used, precision, recall, f1, tp, fp, fn, tn."""
+    """Return au_prc, auc_roc, threshold_used, precision, recall, f1, tp, fp, fn, tn."""
     has_both = (len(np.unique(y_true)) == 2)
     auc_roc = float(roc_auc_score(y_true, y_scores)) if has_both else np.nan
-    auc_prc = float(average_precision_score(y_true, y_scores)) if has_both else np.nan
+    au_prc = float(average_precision_score(y_true, y_scores)) if has_both else np.nan
     thr, p_at, r_at, f1_at, y_pred = select_predictions(y_true, y_scores, fixed_threshold)
 
     tp = int(((y_pred == 1) & (y_true == 1)).sum())
@@ -308,7 +308,7 @@ def compute_metrics(
     tn = int(((y_pred == 0) & (y_true == 0)).sum())
 
     return {
-        "auc_prc": auc_prc,
+        "au_prc": au_prc,
         "auc_roc": auc_roc,
         "threshold_used": float(thr),
         "precision": float(p_at),
@@ -360,11 +360,11 @@ def evaluate_per_group(
 
 def macro_average(group_df: pd.DataFrame) -> pd.DataFrame:
     """Unweighted mean across conditions per tool (PRIMARY)."""
-    keep = ["auc_prc", "auc_roc", "precision", "recall", "f1"]
+    keep = ["au_prc", "auc_roc", "precision", "recall", "f1"]
     agg = (group_df.groupby("tool", as_index=False)[keep]
            .mean(numeric_only=True))
     agg.rename(columns={
-        "auc_prc": "pr_auc_macro",
+        "au_prc": "pr_auc_macro",
         "auc_roc": "roc_auc_macro",
         "precision": "precision_macro",
         "recall": "recall_macro",
@@ -455,19 +455,19 @@ def export_tool_curves_micro(
 
         # PR
         prec_arr, rec_arr, _ = precision_recall_curve(y_true_cat, y_score_cat)
-        auc_pr = average_precision_score(y_true_cat, y_score_cat)
+        au_prc = average_precision_score(y_true_cat, y_score_cat)
         plt.figure(figsize=(6, 5))
         plt.plot(rec_arr, prec_arr, lw=2)
         plt.xlabel("Recall")
         plt.ylabel("Precision")
-        plt.title(f"PR — {tool} (AP={auc_pr:.3f})")
+        plt.title(f"PR — {tool} (AP={au_prc:.3f})")
         plt.tight_layout()
         plt.savefig(outdir / f"pr_{tool}.png", dpi=200, bbox_inches="tight")
         plt.close()
 
 
 def factor_plots(group_df: pd.DataFrame, outdir: Path) -> None:
-    """Three 2x2-style figures: AUC–PRC, AUC–ROC, F1 vs (depth, read, deam)."""
+    """Three 2x2-style figures: AUPRC, AUC–ROC, F1 vs (depth, read, deam)."""
     outdir.mkdir(parents=True, exist_ok=True)
 
     def _plot(metric: str, path: Path) -> None:
@@ -530,7 +530,7 @@ def factor_plots(group_df: pd.DataFrame, outdir: Path) -> None:
         plt.close()
         logger.info("Saved %s", path.name)
 
-    _plot("auc_prc", outdir / "factor_plots_auc_pr.png")
+    _plot("au_prc", outdir / "factor_plots_au_prc.png")
     _plot("auc_roc", outdir / "factor_plots_auc_roc.png")
     _plot("f1", outdir / "factor_plots_f1.png")
 

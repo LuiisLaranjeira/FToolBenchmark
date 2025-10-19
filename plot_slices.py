@@ -6,7 +6,7 @@ Fix two factors and vary the third, plotting one line per tool.
 Input:
   - group_core_metrics.csv (from the evaluator), columns include:
       tool, depth (int), read (int), deam (float), deam_key (str),
-      auc_prc, auc_roc, precision, recall, f1
+      au_prc, auc_roc, precision, recall, f1
 
 Usage examples:
   # 1) Fix depth=20, read=40; vary deamination
@@ -28,7 +28,7 @@ Usage examples:
     --vary read --depth 20 --deam 0.0
 
 Options:
-  --metrics auc_prc auc_roc f1   # choose which metrics to plot (default: auc_prc auc_roc f1)
+  --metrics au_prc auc_roc f1   # choose which metrics to plot (default: au_prc auc_roc f1)
 """
 
 from __future__ import annotations
@@ -42,7 +42,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 VALID_VARY = {"deam", "depth", "read"}
-DEFAULT_METRICS = ["auc_prc", "auc_roc", "f1"]
+DEFAULT_METRICS = ["au_prc", "auc_roc", "f1"]
 
 # One marker per tool (cycles if there are many tools)
 MARKERS = ['o', 's', '^', 'D', 'v', 'P', 'X', '*', 'h', '>', '<', '8', 'p']
@@ -77,8 +77,8 @@ def _ensure_columns(df: pd.DataFrame, cols: List[str]) -> None:
 
 
 def _metric_title(metric: str) -> str:
-    if metric.lower() == "auc_prc":
-        return "AUC–PRC"
+    if metric.lower() == "au_prc":
+        return "AUPRC"
     if metric.lower() == "auc_roc":
         return "AUC–ROC"
     if metric.lower() == "f1":
@@ -89,7 +89,7 @@ def _metric_title(metric: str) -> str:
 
 def _metric_ylim(metric: str):
     # Most of these are bounded in [0,1]; keep y-axis tidy
-    if metric.lower() in {"auc_prc", "auc_roc", "f1", "precision", "recall"}:
+    if metric.lower() in {"au_prc", "auc_roc", "f1", "precision", "recall"}:
         return (0.0, 1.05)  # minimal headroom; avoids misleading scale
     return None
 
@@ -202,7 +202,7 @@ def main():
     args = ap.parse_args()
 
     df = pd.read_csv(args.input)
-    _ensure_columns(df, ["tool", "depth", "read", "deam", "auc_prc", "auc_roc", "f1"])
+    _ensure_columns(df, ["tool", "depth", "read", "deam", "au_prc", "auc_roc", "f1"])
 
     plot_slice(
         df=df,
